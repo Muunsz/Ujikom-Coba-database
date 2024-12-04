@@ -1,0 +1,401 @@
+/* Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  color: #ffffff;
+  background-color: #333;
+}
+
+h1, h2, h3 {
+  color: #ffc107;
+  margin: 20px 0 10px;
+}
+
+p, ul {
+  color: #fff;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+nav {
+  position: sticky; /* Tetap terlihat saat scrolling */
+  top: 0;
+  z-index: 1000;
+  background: linear-gradient(135deg, #444, #000); /* Gradient background */
+  padding: 10px 20px;
+  border-bottom: 2px solid #fff;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav li {
+  margin: 0 15px;
+  position: relative;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  padding: 10px 5px;
+  position: relative;
+}
+
+nav a:hover {
+  color: #ffc107;
+}
+
+nav a.active {
+  color: #ffc107;
+}
+
+nav a.active::after {
+  content: "";
+  display: block;
+  width: 50%;
+  height: 2px;
+  background-color: #fff;
+  margin: 0 auto;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.logo-text {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  margin-right: 10px;
+}
+
+.logo img {
+  height: 40px;
+  width: auto;
+  border-radius: 5px;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #444;
+  padding: 10px 0;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li {
+  width: 200px;
+}
+
+.dropdown-menu a {
+  padding: 10px 15px;
+  display: block;
+  color: #fff;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+  background-color: #333;
+  color: #ffc107;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    display: none;
+    background-color: #000;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  nav ul .dropdown-menu {
+    position: static;
+    box-shadow: none;
+  }
+
+  nav ul li {
+    width: 100%;
+  }
+
+  .burger-menu {
+    display: block;
+    cursor: pointer;
+  }
+
+  .burger-menu div {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+  }
+}
+
+/* Menambahkan styling untuk logo di atas kotak saran */
+.logo-container {
+  text-align: center; /* Memusatkan logo */
+  margin-bottom: 20px; /* Memberikan ruang bawah pada logo */
+}
+
+.feedback-logo {
+  width: 100px; /* Mengatur lebar logo */
+  height: auto; /* Mempertahankan rasio aspek */
+  border-radius: 5px; /* Sudut membulat */
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); /* Memberikan efek bayangan ringan */
+}
+
+/* Kotak Saran dan Pengaduan */
+.feedback-section {
+  background-color: #222; /* Warna dasar */
+  color: #fff; /* Warna teks */
+  max-width: 600px;
+  margin: 50px auto; /* Tengah halaman */
+  padding: 20px 30px;
+  border-radius: 10px; /* Sudut membulat */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8); /* Efek melayang */
+  text-align: center; /* Teks rata tengah */
+}
+
+.feedback-section h2 {
+  font-size: 24px;
+  color: #ffc107; /* Aksen warna emas */
+  margin-bottom: 15px;
+}
+
+.feedback-section p {
+  font-size: 16px;
+  color: #bbb; /* Warna teks abu-abu terang */
+  margin-bottom: 20px;
+}
+
+.feedback-form {
+  display: flex;
+  flex-direction: column; /* Elemen ditumpuk vertikal */
+}
+
+.feedback-form input,
+.feedback-form textarea {
+  background-color: #333; /* Warna bidang input */
+  color: #fff; /* Warna teks */
+  border: 1px solid #444; /* Border tipis */
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none; /* Hilangkan border fokus */
+}
+
+.feedback-form input:focus,
+.feedback-form textarea:focus {
+  border: 1px solid #ffc107; /* Warna border saat fokus */
+}
+
+/* Kotak saran tetap di tempat */
+/* Style untuk Tombol Kirim dan Selesai */
+.feedback-form button {
+  background-color: #ffc107; /* Warna latar belakang tombol */
+  color: #000; /* Warna teks tombol */
+  border: none; /* Hilangkan border */
+  padding: 12px 25px; /* Jarak dalam tombol */
+  font-size: 16px; /* Ukuran font */
+  font-weight: bold; /* Menebalkan teks */
+  border-radius: 8px; /* Sudut membulat */
+  transition: all 0.3s ease; /* Transisi lembut saat interaksi */
+  cursor: pointer; /* Menampilkan kursor pointer saat hover */
+  display: inline-block; /* Tombol bersebelahan secara horizontal */
+}
+
+/* Efek hover untuk tombol */
+.feedback-form button:hover {
+  background-color: #e0a800; /* Ubah warna saat hover */
+  transform: scale(1.1); /* Efek zoom saat hover */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Tambahkan bayangan saat hover */
+  letter-spacing: 1px; /* Spasi antar huruf lebih lebar saat hover */
+}
+
+/* Efek active (tombol ditekan) */
+.feedback-form button:active {
+  transform: scale(1); /* Hilangkan efek zoom saat tombol diklik */
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); /* Bayangan lebih kecil saat tombol diklik */
+}
+
+/* Tombol "Selesai" dengan jarak atas */
+.feedback-form button + button {
+  margin-top: 15px; /* Memberikan jarak di antara tombol */
+}
+
+/* Disabled button */
+button:disabled {
+  background-color: #555;
+  color: #ccc; /* Warna teks tombol disabled */
+  cursor: not-allowed; /* Menonaktifkan kursor pointer */
+}
+
+/* Notifikasi Terima Kasih */
+.notification {
+  position: fixed; /* Tetap di layar tanpa memengaruhi layout */
+  top: 20px; /* Jarak dari atas */
+  right: 20px; /* Jarak dari kanan */
+  background-color: #ffc107; /* Warna emas */
+  color: #000; /* Warna teks */
+  padding: 15px 20px;
+  border-radius: 8px; /* Sudut melengkung */
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5); /* Bayangan */
+  font-size: 16px;
+  font-weight: bold;
+  opacity: 0; /* Awalnya tidak terlihat */
+  transform: translateY(-20px); /* Bergerak ke atas saat masuk */
+  transition: all 0.5s ease; /* Efek transisi lembut */
+  z-index: 1000; /* Pastikan di atas elemen lain */
+}
+
+.notification.show {
+  opacity: 1; /* Tampilkan notifikasi */
+  transform: translateY(0); /* Posisikan ke tempat sebenarnya */
+}
+
+.notification.hide {
+  opacity: 0; /* Hilangkan notifikasi */
+  transform: translateY(-20px); /* Bergerak keluar ke atas */
+}
+
+/* Main Content */
+main {
+  flex-grow: 1; /* Memberi ruang agar main mengambil sisa ruang yang tersedia */
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+article {
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: #222;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+article h2 {
+  margin-top: 0;
+}
+
+article ul {
+  padding-left: 20px;
+}
+
+article ul li {
+  margin-bottom: 10px;
+}
+
+/* Footer tetap berada di bawah */
+footer {
+  background: #222;
+  margin-top: 5%;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  box-shadow: 0px -4px 10px rgba(0, 0, 0, 1);
+  width: 100%; /* Pastikan footer mengisi lebar layar */
+}
+
+footer h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #fff;
+}
+
+footer h1 {
+  font-size: 30px;
+  margin-bottom: 18px;
+  color: #fff;
+}
+
+footer p {
+  font-size: 14px;
+  margin-top: 10px;
+  color: #bbbbbb;
+}
+
+.footer-nav a {
+    color: #ffc107;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.footer-nav a:hover {
+    text-decoration: underline;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.social-icons a {
+  color: #ffffff;
+  font-size: 24px;
+  margin: 0 15px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #ffc107;
+  transform: scale(1.2);
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+  .social-icons {
+    gap: 10px;
+  }
+
+  footer h3 {
+    font-size: 18px;
+  }
+}

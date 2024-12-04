@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Raport Online SMKN 1 Katapang</title>
+    <link rel="stylesheet" href="../css/raport.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <div class="nav-container">
+                <ul class="nav-menu">
+                    <li><a href="../html/dashboard.html">Beranda</a></li>
+                    <li class="dropdown">
+                        <a href="#">Sekolah</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="https://www.smkn1katapang.sch.id/about/">Profil Sekolah</a></li>
+                            <li><a href="https://smkn1katapang.id/">Informasi</a></li>
+                            <li><a href="https://smkn1katapang-bdg.sch.id/home">Berita</a></li>
+                            <li><a href="https://www.smkn1katapang.sch.id/">Update PPDB</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../html/Pelajaran.html">Pelajaran</a></li>
+                    <li><a href="../html/raport.html" class="active">Raport</a></li>
+                    <li><a href="../html/guru.html">Guru</a></li>
+                    <li><a href="../html/login.html">Login</a></li>
+                </ul>
+                <button class="burger-menu" aria-label="Toggle menu" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="logo-section">
+                    <span class="logo-text">Rapot Online</span>
+                    <img src="../poto/115-SMKN_1_KATAPANG.png" alt="Logo SMKN 1 Katapang" class="logo">
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1>Sistem Raport Online SMKN 1 Katapang</h1>
+        
+        <section id="loginForm">
+            <h2>Login Siswa</h2>
+            <form id="studentLogin">
+                <div class="form-group">
+                    <label for="nis">Nomor Induk Siswa:</label>
+                    <input type="text" id="nis" name="nis" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            <p id="loginMessage" aria-live="polite"></p>
+        </section>
+
+        <section id="reportCard" hidden>
+            <h2>Pencarian Raport Berhasil</h2>
+            <div id="studentInfo" class="student-info">
+                <img id="studentPhoto" src="placeholder.jpg" alt="Foto Siswa">
+                <p id="studentName"></p>
+                <p id="studentNISN"></p>
+            </div>
+
+            <div id="reportSelection">
+                <h3>Pilih Raport:</h3>
+                <select id="reportSelect" aria-label="Pilih semester dan tahun ajaran"></select>
+            </div>
+
+            <div id="reportContent" hidden>
+                <h2>Laporan Pencapaian Kompetensi Peserta Didik SMK Negeri 1 Katapang</h2>
+                
+                <section id="studentDetails" class="report-section">
+                    <h3>Data Siswa</h3>
+                    <!-- Student details will be populated by JavaScript -->
+                </section>
+
+                <section id="parentInfo" class="report-section">
+                    <h3>Data Orang Tua</h3>
+                    <!-- Parent info will be populated by JavaScript -->
+                </section>
+
+                <section id="guardianInfo" class="report-section">
+                    <h3>Data Wali Peserta Didik</h3>
+                    <!-- Guardian info will be populated by JavaScript -->
+                </section>
+
+                <section id="academicGrades" class="report-section">
+                    <h3>Nilai Akademik</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Mata Pelajaran</th>
+                                <th>Nilai</th>
+                                <th>Catatan</th>
+                            </tr>
+                        </thead>
+                        <tbody id="gradesTableBody">
+                            <!-- Grades will be inserted here by JavaScript -->
+                        </tbody>
+                    </table>
+                </section>
+
+                <section id="extracurricular" class="report-section">
+                    <h3>Ekstrakurikuler</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Kegiatan Ekstrakurikuler</th>
+                                <th>Keterangan</th>
+                            </tr>
+                        </thead>
+                        <tbody id="extracurricularTableBody">
+                            <!-- Extracurricular activities will be inserted here by JavaScript -->
+                        </tbody>
+                    </table>
+                </section>
+
+                <section id="attendance" class="report-section">
+                    <h3>Ketidakhadiran</h3>
+                    <!-- Attendance info will be populated by JavaScript -->
+                </section>
+
+                <section id="pancasilaProfile" class="report-section">
+                    <h3>Laporan Project Penguatan Profil Pelajar Pancasila</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Dimensi</th>
+                                <th>Perkembangan</th>
+                            </tr>
+                        </thead>
+                        <tbody id="pancasilaProfileBody">
+                            <!-- Pancasila profile will be inserted here by JavaScript -->
+                        </tbody>
+                    </table>
+
+                    <h4>Perkembangan Karakter</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Dimensi</th>
+                                <th>Perkembangan</th>
+                            </tr>
+                        </thead>
+                        <tbody id="characterDevelopmentBody">
+                            <!-- Character development will be inserted here by JavaScript -->
+                        </tbody>
+                    </table>
+                </section>
+
+                <section id="processNotes" class="report-section">
+                    <h3>Catatan Proses</h3>
+                    <p id="processNotesContent"></p>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <h2>SMK Negeri 1 Katapang</h2>
+        <nav class="footer-nav">
+            <a href="../html/saran dan pengaduan.html">Saran</a>
+            <a href="https://www.smkn1katapang.sch.id">Sekolah</a>
+            <a href="https://www.instagram.com/syann_n/">Admin</a>
+        </nav>
+        <h3>Connect with us</h3>
+        <div class="social-icons">
+            <a href="https://instagram.com/smkn1katapang/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@smkn1katapang242" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.tiktok.com/@smkn1katapang" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.facebook.com/groups/smkn1katapang" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p>&copy; 2024 SMK Negeri 1 Katapang. Hak cipta dilindungi undang-undang.</p>
+    </footer>
+
+    <script src="../js/PilihRaport.js"></script>
+    <script src="../js/raport.js"></script>
+</body>
+</html>
+
+
+

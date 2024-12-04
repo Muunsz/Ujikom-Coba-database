@@ -1,0 +1,631 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    background-color: #333;
+}
+
+/* Navigation Bar */
+nav {
+    position: sticky; /* Tetap terlihat saat scrolling */
+    top: 0; /* Menempel di bagian atas */
+    z-index: 1000; /* Pastikan berada di atas elemen lain */
+    background: linear-gradient(135deg, #444, #000); /* Gradient background */
+    padding: 10px 20px;
+    border-bottom: 2px solid #fff;
+  }
+  
+  .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  nav li {
+    margin: 0 15px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 5px;
+    position: relative;
+  }
+  
+  nav a:hover {
+    color: #ffc107;
+  }
+  
+  nav a.active {
+    color: #ffc107;
+  }
+  
+  nav a.active::after {
+    content: "";
+    display: block;
+    width: 50%;
+    height: 2px;
+    background-color: #fff;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  .logo-section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  
+  .logo-text {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    margin-right: 10px;
+  }
+  
+  .logo img {
+    height: 40px;
+    width: auto;
+    border-radius: 5px;
+  }
+  
+  /* Horizontal line below navigation */
+  hr {
+    border: 0;
+    height: 2px;
+    background: #fff;
+    margin: 0;
+  }
+  
+  /* Dropdown Default Hidden */
+  .dropdown-menu {
+    display: none;
+  }
+  
+  /* Dropdown Menu Ketika Terbuka */
+  .dropdown-menu.open {
+    display: block;
+  }
+  
+  /* General Navigation Styling */
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  nav ul li {
+    position: relative;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 15px;
+    display: block;
+  }
+  
+  nav ul li:hover > a {
+    background-color: #333;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Dropdown Specific Styling */
+  .dropdown .dropdown-menu {
+    position: absolute;
+    top: 100%; /* Posisi dropdown muncul di bawah */
+    left: 0;
+    background-color: #444;
+    padding: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+  
+  /* Dropdown Items */
+  .dropdown-menu li {
+    width: 200px;
+  }
+  
+  .dropdown-menu a {
+    padding: 10px 15px;
+    color: #fff;
+    display: block;
+    text-decoration: none;
+  }
+  
+  .dropdown-menu a:hover {
+    background-color: #333;
+    color: #ffc107;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Prevent Hover Conflicts */
+  .dropdown:hover .dropdown-menu {
+    display: block; /* Hanya jika ingin dropdown muncul saat hover */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        display: none;
+        background-color: #000;
+        position: absolute;
+        top: 50px;
+        right: 20px;
+        padding: 10px;
+        border-radius: 10px;
+    }
+  
+    nav ul.show {
+        display: flex;
+    }
+  
+    nav ul .dropdown-menu {
+        position: static;
+        box-shadow: none;
+    }
+  
+    nav ul li {
+      width: 100%;
+    }
+  
+    .burger-menu {
+      display: block;
+      cursor: pointer;
+    }
+  
+    .burger-menu div {
+      width: 25px;
+      height: 3px;
+      background-color: #fff;
+      margin: 5px 0;
+    }
+  }
+
+/* Container Styles */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background: #222;
+    padding: 20px;
+    border-radius: 25px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+    color: #ffc107;
+}
+
+form {
+    display: grid;
+    gap: 10px;
+}
+
+label {
+    font-weight: bold;
+    color: #fff;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #444;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #333;
+    color: #fff;
+}
+
+button {
+    background-color: #ffc107;
+    color: #000;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #e0a800;
+}
+
+.grades {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+/* Masukan foto siswa */
+input[type="file"] {
+    border: none;
+    padding: 8px;
+    background-color: #444;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+input[type="file"]::file-selector-button {
+    background-color: #ffc107;
+    color: #000;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="file"]::file-selector-button:hover {
+    background-color: #e0a800;
+}
+
+.editBtn {
+    background-color: #ffc107;
+    color: #000;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.editBtn:hover {
+    background-color: #e0a800;
+}
+
+/* Existing styles remain unchanged */
+
+/* New styles for the extracurricular section */
+.ekstrakurikuler-container {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.ekstrakurikuler-item {
+    background-color: #333;
+    border-radius: 8px;
+    padding: 1rem;
+    display: grid;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.ekstrakurikuler-item:hover {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.ekstrakurikuler-item label {
+    font-weight: bold;
+    color: #ffc107;
+}
+
+.ekstrakurikuler-item input,
+.ekstrakurikuler-item select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #444;
+    border-radius: 4px;
+    background-color: #222;
+    color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+.ekstrakurikuler-item input:focus,
+.ekstrakurikuler-item select:focus {
+    border-color: #ffc107;
+    outline: none;
+}
+
+.tambah-ekskul-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.tambah-ekskul-btn:hover {
+    background-color: #45a049;
+}
+
+@media (min-width: 768px) {
+    .ekstrakurikuler-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* CRUD Operations Styles */
+#crudOperations {
+    margin-top: 2rem;
+    background-color: #333;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+#reportTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+}
+
+#reportTable th, #reportTable td {
+    border: 1px solid #444;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+#reportTable th {
+    background-color: #222;
+    color: #ffc107;
+}
+
+#addReportBtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#addReportBtn:hover {
+    background-color: #45a049;
+}
+
+.editBtn, .deleteBtn {
+    padding: 5px 10px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.editBtn {
+    background-color: #ffc107;
+    color: #000;
+}
+
+.deleteBtn {
+    background-color: #f44336;
+    color: #fff;
+}
+
+.profile-assessment,
+.character-development {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.assessment-item,
+.development-item {
+    background-color: #333;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.assessment-item label,
+.development-item label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #ffc107;
+}
+
+.assessment-item select,
+.development-item select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #444;
+    border-radius: 4px;
+    background-color: #222;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.assessment-item select:focus,
+.development-item select:focus {
+    outline: none;
+    border-color: #ffc107;
+    box-shadow: 0 0 0 2px rgba(255, 193, 7, 0.2);
+}
+
+/* Responsive grid for larger screens */
+@media (min-width: 768px) {
+    .profile-assessment,
+    .character-development {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .profile-assessment {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .character-development {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Hover effects */
+.assessment-item:hover,
+.development-item:hover {
+    background-color: #3a3a3a;
+    transition: background-color 0.3s ease;
+}
+
+/* Animation for select elements */
+@keyframes selectPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 193, 7, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 193, 7, 0);
+    }
+}
+
+.assessment-item select:focus,
+.development-item select:focus {
+    animation: selectPulse 1.5s infinite;
+}
+
+/* Ensure consistency with existing styles */
+.profile-assessment h2,
+.character-development h2 {
+    color: #ffc107;
+    margin-bottom: 1rem;
+}
+
+/* Add some spacing between sections */
+.profile-assessment,
+.character-development {
+    margin-top: 2rem;
+}
+
+/* Style for required fields */
+.assessment-item select:required,
+.development-item select:required {
+    border-left: 3px solid #ffc107;
+}
+
+/* Improve readability of option text */
+.assessment-item select option,
+.development-item select option {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Add a subtle transition effect */
+.assessment-item,
+.development-item,
+.assessment-item select,
+.development-item select {
+    transition: all 0.3s ease;
+}
+
+/* Footer Styles */
+footer {
+    background: #222;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    border-top: 2px solid #fff;
+    box-shadow: 0px -4px 10px rgba(0, 0, 0, 1);
+}
+
+footer h1 {
+    font-size: 24px;
+    margin-bottom: 3%;
+}
+
+footer h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.footer-nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-nav :hover {
+    color: #ffc107;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin: 15px 0;
+}
+
+.social-icons a {
+    color: #ffffff;
+    font-size: 24px;
+    margin: 0 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #ffc107;
+    transform: scale(1.2);
+}
+
+footer p {
+    font-size: 14px;
+    margin-top: 10px;
+    color: #bbbbbb;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        display: none;
+        background-color: #000;
+        position: absolute;
+        top: 50px;
+        right: 20px;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav ul .dropdown-menu {
+        position: static;
+        box-shadow: none;
+    }
+
+    nav ul li {
+        width: 100%;
+    }
+
+    .burger-menu {
+        display: block;
+        cursor: pointer;
+    }
+
+    .burger-menu div {
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        margin: 5px 0;
+    }
+
+    .social-icons {
+        flex-wrap: wrap;
+    }
+
+    .social-icons a {
+        margin: 5px;
+    }
+}

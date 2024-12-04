@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guru - Raport Online SMKN 1 Katapang</title>
+    <link rel="stylesheet" href="../css/guru.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <div class="nav-container">
+                <ul class="nav-menu">
+                    <li><a href="../html/dashboard.html">Beranda</a></li>
+                    <li class="dropdown">
+                        <a href="#">Sekolah</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="https://www.smkn1katapang.sch.id/about/">Profil Sekolah</a></li>
+                            <li><a href="https://smkn1katapang.id/">Informasi</a></li>
+                            <li><a href="https://smkn1katapang-bdg.sch.id/home">Berita</a></li>
+                            <li><a href="https://www.smkn1katapang.sch.id/">Update PPDB</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../html/Pelajaran.html">Pelajaran</a></li>
+                    <li><a href="../html/raport.html">Raport</a></li>
+                    <li><a href="../html/guru.html" class="active">Guru</a></li>
+                    <li><a href="../html/login.html">Login</a></li>
+                </ul>
+                <button class="burger-menu" aria-label="Toggle menu" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="logo-section">
+                    <span class="logo-text">Rapot Online</span>
+                    <img src="../poto/115-SMKN_1_KATAPANG.png" alt="Logo SMKN 1 Katapang" class="logo">
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1>Laporan Capaian Kompetensi Peserta Didik SMKN 1 Katapang</h1>
+        <form id="reportForm" enctype="multipart/form-data">
+            <section class="data-siswa">
+                <h2>Data Siswa</h2>
+                <div class="form-group">
+                    <label for="fotoSiswa">Foto Siswa:</label>
+                    <input type="file" id="fotoSiswa" name="fotoSiswa" accept="image/*">
+                </div>
+                <div class="form-group">
+                    <label for="nama">Nama Peserta Didik:</label>
+                    <input type="text" id="nama" name="nama" required>
+                </div>
+                <div class="form-group">
+                    <label for="nis">Nomor Induk Siswa:</label>
+                    <input type="text" id="nis" name="nis" required>
+                </div>
+                <div class="form-group">
+                <label for="ttl">Tempat, Tanggal Lahir:</label>
+                <input type="text" id="ttl" name="ttl" required>
+                </div>
+                <div class="form-group">
+                <label for="jenisKelamin">Jenis Kelamin:</label>
+                <select id="jenisKelamin" name="jenisKelamin" required>
+                    <option value="">Pilih</option>
+                    <option value="Laki-laki">Laki-laki</option>
+                    <option value="Perempuan">Perempuan</option>
+                </select>
+                </div>
+                <div class="form-group">
+                <label for="agama">Agama:</label>
+                <input type="text" id="agama" name="agama" required>
+                </div>
+                <div class="form-group">
+                <label for="statusKeluarga">Status dalam Keluarga:</label>
+                <input type="text" id="statusKeluarga" name="statusKeluarga" required>
+                </div>
+                <div class="form-group">
+                <label for="anakKe">Anak ke-:</label>
+                <input type="number" id="anakKe" name="anakKe" required>
+                </div>
+                <div class="form-group">
+                <label for="alamat">Alamat Peserta Didik:</label>
+                <textarea id="alamat" name="alamat" required></textarea>
+                </div>
+                <div class="form-group">
+                <label for="telepon">Nomor Telepon:</label>
+                <input type="tel" id="telepon" name="telepon">
+                </div>
+                <div class="form-group">
+                <label for="asalSekolah">Asal Sekolah:</label>
+                <input type="text" id="asalSekolah" name="asalSekolah" required>
+                </div>
+                <div class="form-group">
+                <label for="diterimaDiKelas">Diterima di Kelas:</label>
+                <input type="text" id="diterimaDiKelas" name="diterimaDiKelas" required>
+                </div>
+                <div class="form-group">
+                <label for="tanggalDiterima">Tanggal Diterima:</label>
+                <input type="date" id="tanggalDiterima" name="tanggalDiterima" required>
+                </div>
+            </section>
+
+            <section class="data-orangtua">
+                <h2>Data Orang Tua</h2>
+                <label for="namaAyah">Nama Ayah:</label>
+                <input type="text" id="namaAyah" name="namaAyah" required>
+    
+                <label for="namaIbu">Nama Ibu:</label>
+                <input type="text" id="namaIbu" name="namaIbu" required>
+    
+                <label for="alamatOrtu">Alamat Orang Tua:</label>
+                <textarea id="alamatOrtu" name="alamatOrtu" required></textarea>
+    
+                <label for="teleponOrtu">Nomor Telepon Orang Tua:</label>
+                <input type="tel" id="teleponOrtu" name="teleponOrtu">
+    
+                <label for="pekerjaanAyah">Pekerjaan Ayah:</label>
+                <input type="text" id="pekerjaanAyah" name="pekerjaanAyah" required>
+    
+                <label for="pekerjaanIbu">Pekerjaan Ibu:</label>
+                <input type="text" id="pekerjaanIbu" name="pekerjaanIbu" required>
+    
+            </section>
+
+            <section class="data-wali">
+                <h2>Data Wali (Jika Ada)</h2>
+                <label for="namaWali">Nama Wali:</label>
+                <input type="text" id="namaWali" name="namaWali">
+    
+                <label for="alamatWali">Alamat Wali:</label>
+                <textarea id="alamatWali" name="alamatWali"></textarea>
+    
+                <label for="teleponWali">Nomor Telepon Wali:</label>
+                <input type="tel" id="teleponWali" name="teleponWali">
+    
+                <label for="pekerjaanWali">Pekerjaan Wali:</label>
+                <input type="text" id="pekerjaanWali" name="pekerjaanWali">
+    
+            </section>
+
+            <section class="nilai-akademik">
+                <h2>Nilai Akademik</h2>
+                <div class="grades">
+                        <div class="grade-item">
+                            <label for="matematika">Matematika:</label>
+                            <input type="number" id="matematika" name="matematika" min="0" max="100" required>
+                        </div>
+                        <div class="grade-item">
+                            <label for="bahasaIndonesia">Bahasa Indonesia:</label>
+                            <input type="number" id="bahasaIndonesia" name="bahasaIndonesia" min="0" max="100" required>
+                        </div>
+                        <div class="grade-item">
+                            <label for="bahasaInggris">Bahasa Inggris:</label>
+                            <input type="number" id="bahasaInggris" name="bahasaInggris" min="0" max="100" required>
+                        </div>
+                        <div class="grade-item">
+                            <label for="ppkn">PPKN:</label>
+                            <input type="number" id="ppkn" name="ppkn" min="0" max="100" required>
+                        </div>
+                        <div class="grade-item">
+                            <label for="pendidikanAgama">Pendidikan Agama:</label>
+                            <input type="number" id="pendidikanAgama" name="pendidikanAgama" min="0" max="100" required>
+                        </div>
+                        <div class="grade-item">
+                            <label for="pendidikanJasmani">Pendidikan Jasmani:</label>
+                            <input type="number" id="pendidikanJasmani" name="pendidikanJasmani" min="0" max="100" required>
+                        </div>
+                        <div class="grade-item">
+                            <label for="ipas">IPAS:</label>
+                            <input type="number" id="ipas" name="ipas" min="0" max="100" required>
+                        </div>
+                        <div class="grade-item">
+                            <label for="bahasaSunda">Bahasa Sunda:</label>
+                            <input type="number" id="bahasaSunda" name="bahasaSunda" min="0" max="100" required>
+                        </div>
+                        <div class="grade-item">
+                            <label for="seniMusik">Seni Musik:</label>
+                            <input type="number" id="seniMusik" name="seniMusik" min="0" max="100" required>
+                        </div>
+                        <div class="grade-item">
+                            <label for="sejarah">Sejarah:</label>
+                            <input type="number" id="sejarah" name="sejarah" min="0" max="100" required>
+                        </div>
+                        <div class="grade-item">
+                            <label for="bahasaJepang">Bahasa Jepang:</label>
+                            <input type="number" id="bahasaJepang" name="bahasaJepang" min="0" max="100" required>
+                        </div>
+                        <div class="grade-item">
+                            <label for="informatika">Informatika:</label>
+                            <input type="number" id="informatika" name="informatika" min="0" max="100" required>
+                        </div>
+                        <div class="grade-item">
+                            <label for="mataPelajaranPilihan">Mata Pelajaran Pilihan:</label>
+                            <input type="number" id="mataPelajaranPilihan" name="mataPelajaranPilihan" min="0" max="100" required>
+                        </div>
+                        <div class="grade-item">
+                            <label for="pkk">PKK:</label>
+                            <input type="number" id="pkk" name="pkk" min="0" max="100" required>
+                        </div>
+                        <div class="grade-item">
+                            <label for="bimbinganKonseling">Bimbingan Konseling:</label>
+                            <input type="number" id="bimbinganKonseling" name="bimbinganKonseling" min="0" max="100" required>
+                        </div>
+                        <div class="grade-item">
+                            <label for="produktif">Produktif:</label>
+                            <input type="number" id="produktif" name="produktif" min="0" max="100" required>
+                        </div>
+                </div>
+            </section>
+
+            <section class="info-tambahan">
+                <h2>Informasi Tambahan</h2>
+                <label for="fase">Fase:</label>
+                <input type="text" id="fase" name="fase" required>
+    
+                <label for="semester">Semester:</label>
+                <select id="semester" name="semester" required>
+                    <option value="">Pilih</option>
+                    <option value="Ganjil">Ganjil</option>
+                    <option value="Genap">Genap</option>
+                </select>
+    
+                <label for="tahunPelajaran">Tahun Pelajaran:</label>
+                <input type="text" id="tahunPelajaran" name="tahunPelajaran" required>
+            </section>
+
+            <section class="ekstrakurikuler">
+                <h2>Ekstrakurikuler</h2>
+                <div id="ekstrakurikuler" class="ekstrakurikuler-container">
+                        <div class="ekstrakurikuler-item">
+                            <label for="ekskul1">Ekstrakurikuler 1:</label>
+                            <input type="text" id="ekskul1" name="ekskul1" placeholder="Nama Ekstrakurikuler">
+                            <select id="nilaiEkskul1" name="nilaiEkskul1">
+                                <option value="">Pilih Nilai</option>
+                                <option value="Baik">Baik</option>
+                                <option value="Cukup">Cukup</option>
+                                <option value="Kurang">Kurang</option>
+                            </select>
+                        </div>
+                        <div class="ekstrakurikuler-item">
+                            <label for="ekskul2">Ekstrakurikuler 2:</label>
+                            <input type="text" id="ekskul2" name="ekskul2" placeholder="Nama Ekstrakurikuler">
+                            <select id="nilaiEkskul2" name="nilaiEkskul2">
+                                <option value="">Pilih Nilai</option>
+                                <option value="Baik">Baik</option>
+                                <option value="Cukup">Cukup</option>
+                                <option value="Kurang">Kurang</option>
+                            </select>
+                        </div>
+                        <div class="ekstrakurikuler-item">
+                            <label for="ekskul3">Ekstrakurikuler 3:</label>
+                            <input type="text" id="ekskul3" name="ekskul3" placeholder="Nama Ekstrakurikuler">
+                            <select id="nilaiEkskul3" name="nilaiEkskul3">
+                                <option value="">Pilih Nilai</option>
+                                <option value="Baik">Baik</option>
+                                <option value="Cukup">Cukup</option>
+                                <option value="Kurang">Kurang</option>
+                            </select>
+                        </div>
+                </div>
+                <button type="button" onclick="tambahEkskul()">Tambah Ekstrakurikuler</button>
+            </section>
+
+            <section class="ketidakhadiran">
+                <h2>Ketidakhadiran</h2>
+                <label for="sakit">Sakit (hari):</label>
+                <input type="number" id="sakit" name="sakit" min="0" required>
+    
+                <label for="izin">Izin (hari):</label>
+                <input type="number" id="izin" name="izin" min="0" required>
+    
+                <label for="tanpaKeterangan">Tanpa Keterangan (hari):</label>
+                <input type="number" id="tanpaKeterangan" name="tanpaKeterangan" min="0" required>
+    
+            </section>
+
+            <section class="laporan-project">
+                <h2>Laporan Project Penguatan Profil Pelajar Pancasila</h2>
+                <div class="profile-assessment">
+                    <div class="assessment-item">
+                        <label for="kemampuanKolaborasi">Kemampuan Kolaborasi:</label>
+                        <select id="kemampuanKolaborasi" name="kemampuanKolaborasi" required>
+                            <option value="">Pilih</option>
+                            <option value="Mulai Berkembang">Mulai Berkembang</option>
+                            <option value="Sedang Berkembang">Sedang Berkembang</option>
+                            <option value="Berkembang Sesuai Harapan">Berkembang Sesuai Harapan</option>
+                            <option value="Sangat Berkembang">Sangat Berkembang</option>
+                        </select>
+                    </div>
+                    <div class="assessment-item">
+                        <label for="bernalarKritis">Bernalar Kritis:</label>
+                        <select id="bernalarKritis" name="bernalarKritis" required>
+                            <option value="">Pilih</option>
+                            <option value="Mulai Berkembang">Mulai Berkembang</option>
+                            <option value="Sedang Berkembang">Sedang Berkembang</option>
+                            <option value="Berkembang Sesuai Harapan">Berkembang Sesuai Harapan</option>
+                            <option value="Sangat Berkembang">Sangat Berkembang</option>
+                        </select>
+                    </div>
+                    <div class="assessment-item">
+                        <label for="kreativitas">Kreativitas:</label>
+                        <select id="kreativitas" name="kreativitas" required>
+                            <option value="">Pilih</option>
+                            <option value="Mulai Berkembang">Mulai Berkembang</option>
+                            <option value="Sedang Berkembang">Sedang Berkembang</option>
+                            <option value="Berkembang Sesuai Harapan">Berkembang Sesuai Harapan</option>
+                            <option value="Sangat Berkembang">Sangat Berkembang</option>
+                        </select>
+                    </div>
+                    <div class="assessment-item">
+                        <label for="kemandirian">Kemandirian:</label>
+                        <select id="kemandirian" name="kemandirian" required>
+                            <option value="">Pilih</option>
+                            <option value="Mulai Berkembang">Mulai Berkembang</option>
+                            <option value="Sedang Berkembang">Sedang Berkembang</option>
+                            <option value="Berkembang Sesuai Harapan">Berkembang Sesuai Harapan</option>
+                            <option value="Sangat Berkembang">Sangat Berkembang</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <section class="perkembangan-karakter">
+                <h2>Perkembangan Karakter</h2>
+                <div class="character-development">
+                    <div class="development-item">
+                        <label for="berimanBertakwa">Beriman dan Bertakwa:</label>
+                        <select id="berimanBertakwa" name="berimanBertakwa" required>
+                            <option value="">Pilih</option>
+                            <option value="Mulai Berkembang">Mulai Berkembang</option>
+                            <option value="Sedang Berkembang">Sedang Berkembang</option>
+                            <option value="Berkembang Sesuai Harapan">Berkembang Sesuai Harapan</option>
+                            <option value="Sangat Berkembang">Sangat Berkembang</option>
+                        </select>
+                    </div>
+                    <div class="development-item">
+                        <label for="berkebinekaanGlobal">Berkebinekaan Global:</label>
+                        <select id="berkebinekaanGlobal" name="berkebinekaanGlobal" required>
+                            <option value="">Pilih</option>
+                            <option value="Mulai Berkembang">Mulai Berkembang</option>
+                            <option value="Sedang Berkembang">Sedang Berkembang</option>
+                            <option value="Berkembang Sesuai Harapan">Berkembang Sesuai Harapan</option>
+                            <option value="Sangat Berkembang">Sangat Berkembang</option>
+                        </select>
+                    </div>
+                    <div class="development-item">
+                        <label for="bernalarKritisKarakter">Bernalar Kritis:</label>
+                        <select id="bernalarKritisKarakter" name="bernalarKritisKarakter" required>
+                            <option value="">Pilih</option>
+                            <option value="Mulai Berkembang">Mulai Berkembang</option>
+                            <option value="Sedang Berkembang">Sedang Berkembang</option>
+                            <option value="Berkembang Sesuai Harapan">Berkembang Sesuai Harapan</option>
+                            <option value="Sangat Berkembang">Sangat Berkembang</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <div class="form-group">
+                <label for="catatanProses">Catatan Proses:</label>
+                <textarea id="catatanProses" name="catatanProses" required></textarea>
+            </div>
+
+            <button type="submit">Simpan Raport</button>
+        </form>
+
+        <section id="crudOperations">
+            <h2>Daftar Raport</h2>
+            <table id="reportTable">
+                <thead>
+                    <tr>
+                        <th>Nama Siswa</th>
+                        <th>NIS</th>
+                        <th>Kelas</th>
+                        <th>Foto</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Report rows will be dynamically added here -->
+                </tbody>
+            </table>
+            <button id="addReportBtn">Tambah Raport Baru</button>
+        </section>
+    </main>
+
+    <footer>
+        <h2>SMK Negeri 1 Katapang</h2>
+        <nav class="footer-nav">
+            <a href="../html/saran dan pengaduan.html">Saran</a>
+            <a href="https://www.smkn1katapang.sch.id">Sekolah</a>
+            <a href="https://www.instagram.com/syann_n/">Admin</a>
+        </nav>
+        <h3>Connect with us</h3>
+        <div class="social-icons">
+            <a href="https://instagram.com/smkn1katapang/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@smkn1katapang242" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.tiktok.com/@smkn1katapang" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.facebook.com/groups/smkn1katapang" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://whatsapp.com" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p>&copy; 2024 SMK Negeri 1 Katapang. Hak cipta dilindungi undang-undang.</p>
+    </footer>
+
+    <script src="../js/guru.js"></script>
+</body>
+</html>

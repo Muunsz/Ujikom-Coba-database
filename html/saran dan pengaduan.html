@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengaduan & Saran - SMK Negeri 1 Katapang</title>
+    <link rel="stylesheet" href="../css/saran dan pengaduan.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <ul>
+                    <li><a href="../html/dashboard.html">Beranda</a></li>
+                    <li class="dropdown">
+                        <a href="#">Sekolah</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="https://www.smkn1katapang.sch.id/about/">Profil Sekolah</a></li>
+                            <li><a href="https://smkn1katapang.id/">Informasi</a></li>
+                            <li><a href="https://smkn1katapang-bdg.sch.id/home">Berita</a></li>
+                            <li><a href="https://www.smkn1katapang.sch.id/">Update PPDB</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../html/Pelajaran.html">Pelajaran</a></li>
+                    <li><a href="../html/raport.html">Raport</a></li>
+                    <li><a href="../html/guru.html">Guru</a></li>
+                    <li><a href="../html/login.html">Login</a></li>
+                </ul>
+                <div class="logo-section">
+                    <span class="logo-text">Rapot Online</span>
+                    <div class="logo">
+                        <img src="../poto/115-SMKN_1_KATAPANG.png" alt="Logo">
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Bagian Kotak Saran -->
+        <section class="feedback-section">
+            <!-- Menambahkan logo di atas kotak saran dan pengaduan -->
+            <div class="logo-container">
+                <img src="../poto/115-SMKN_1_KATAPANG.png" alt="Logo Sekolah" class="feedback-logo">
+            </div>
+            <h2>Kotak Saran dan Pengaduan</h2>
+            <p>Silakan tuliskan saran atau pengaduan Anda untuk meningkatkan kualitas pelayanan kami.</p>
+            <form action="submit.php" method="POST" class="feedback-form">
+                <input type="text" name="nama" placeholder="Nama Lengkap" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="pesan" placeholder="Saran atau Pengaduan Anda" rows="5" required></textarea>
+                <button type="submit">Kirim</button>
+                <button type="button">Selesai</button>
+            </form>
+        </section>               
+    </main>
+
+    <footer>
+        <h1>SMK Negeri 1 Katapang</h1>
+        <div class="footer-nav">
+            <a href="../html/saran dan pengaduan.html" class="active">Saran</a>
+            <a href="https://www.smkn1katapang.sch.id">Sekolah</a>
+            <a href="https://www.instagram.com/syann_n/">Admin</a>
+        </div>
+        <h3>Connect with us</h3>
+        <div class="social-icons">
+            <a href="https://instagram.com/smkn1katapang/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@smkn1katapang242" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.tiktok.com/@smkn1katapang" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.facebook.com/groups/smkn1katapang" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://whatsapp.com" target="_blank" aria-label="Whatsapp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p>Copyright 2024, SMK Negeri 1 Katapang. Hak cipta dilindungi undang-undang.</p>
+    </footer>
+
+    <script src="../js/saran dan pengaduan.js"></script>
+</body>
+</html>
